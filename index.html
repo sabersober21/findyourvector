@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arthropod Sorting Quiz</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        .question {
+            margin: 20px 0;
+            text-align: left;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background: #3498db;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background: #2980b9;
+        }
+        .result {
+            font-weight: bold;
+            margin-top: 20px;
+            font-size: 18px;
+            color: #27ae60;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Which Arthropod Are You?</h1>
+        <p>Answer the following questions to discover your inner arthropod!</p>
+        
+        <form id="quizForm">
+            <div class="question">
+                <label>What's your stripper name? (Your first pet name + Street you grew up in)</label>
+                <input type="text" name="stripperName">
+            </div>
+            <div class="question">
+                <label>Do you even know what are Festoons????</label>
+                <select name="festoons">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                    <option value="maybe">Maybe</option>
+                </select>
+            </div>
+            <div class="question">
+                <label>Pick the characteristic genitalia feature of a male sandfly</label>
+                <select name="sandflyGenitalia">
+                    <option value="hook">Has a Captain Hook like clasp</option>
+                    <option value="bbl">Has a BBL</option>
+                    <option value="spreadCheeks">Can spread those cheeks like they want some festoons!</option>
+                </select>
+            </div>
+            <div class="question">
+                <label>If you were in a zombie apocalypse, what would you do?</label>
+                <select name="zombieResponse">
+                    <option value="leader">Lead a group of survivors.</option>
+                    <option value="loneWolf">Go solo and survive.</option>
+                    <option value="hide">Find a safe bunker.</option>
+                </select>
+            </div>
+            <button type="button" onclick="getResult()">Find My Arthropod!</button>
+        </form>
+        
+        <p class="result" id="result"></p>
+    </div>
+    
+    <script>
+        function getResult() {
+            const arthropods = [
+                "Culex quinquefasciatus",
+                "Culex pipiens",
+                "Anopheles gambiae",
+                "Aedes polynsesiensis",
+                "Mansonia dives",
+                "Anopheles funestus",
+                "An. vaneedeni",
+                "An. rivulorum",
+                "An. leesoni",
+                "An. confuses",
+                "Aedes albopictus",
+                "Aedes aegypti",
+                "Black Fly",
+                "Sandfly"
+            ];
+            
+            const randomIndex = Math.floor(Math.random() * arthropods.length);
+            const resultText = "You are a " + arthropods[randomIndex];
+            const valentineText = ".The question remains, who would love you this Valentine's if you were " + arthropods[randomIndex] + "?";
+            
+            document.getElementById("result").textContent = resultText + "\n" + valentineText;
+        }
+    </script>
+</body>
+</html>
